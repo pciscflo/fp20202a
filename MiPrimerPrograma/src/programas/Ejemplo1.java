@@ -12,7 +12,7 @@ public class Ejemplo1 {
         if(edad<18){
             System.out.println("Eres un niño!!!");
         }else {
-            System.out.println("Eres mayor de edad!!");
+            System.out.println("Eres mayor de edad!!!");
         }
     }
 }
