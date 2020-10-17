@@ -10,7 +10,7 @@ public class App5 {
             resto = resto % 50;
             billetes20 = resto / 20;
             resto = resto % 20;
-            billetes10 = resto % 20;
+            billetes10 = resto / 10;
             System.out.println("Billetes de 100:" + billetes100);
             System.out.println("Billetes de 50:" + billetes50);
             System.out.println("Billetes de 20:" + billetes20);
