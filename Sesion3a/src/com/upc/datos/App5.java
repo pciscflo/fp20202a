@@ -22,9 +22,6 @@ public class App5 {
 
     public static void main(String[] args) {
         System.out.println(cubo(3));
-        double y;
-        int a = 2;
-        y = 1 + cubo(a);
-;       System.out.println(obtenerNumeral(y));
+        System.out.println(obtenerNumeral(20));
     }
 }
