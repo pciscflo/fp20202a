@@ -1,15 +1,16 @@
 package com.upc.ejercicios;
 
-public class App3 {
+public class App4 {
+    //Globales de acceso directo
+    static double[] notas = {19.5, 10.5, 20};
+    static String[] nombres = {"Luis", "Juan", "Susan"};
+
     public static void main(String[] args) {
-        //Arreglos locales a main
-        double[] notas = {19.5, 10.5, 20};
-        String[] nombres = {"Luis", "Juan", "Susan"};
-        System.out.println("Suma:" + sumatoria(notas));//le esta enviando o pasando el arreglo como parámetro
-        System.out.println("Aprobados:" + obtenerAprobados(notas));
-        System.out.println("Nombre del ganador:" + obtenerNombreMayorNota(notas, nombres));
+        System.out.println("Suma:" + sumatoria());
+        System.out.println("Aprobados:" + obtenerAprobados());
+        System.out.println("Nombre del ganador:" + obtenerNombreMayorNota());
     }
-    static String obtenerNombreMayorNota(double[] notas, String[] nombres){
+    static String obtenerNombreMayorNota(){
         double maximo=0;
         String nom="";
         for(int i=0; i< notas.length; i++){
@@ -20,7 +21,7 @@ public class App3 {
         }
         return nom;
     }
-    static double sumatoria(double[] notas){
+    static double sumatoria(){
         double suma = 0;
         for(int i=0; i<notas.length;i++){
             suma+=notas[i];
@@ -28,7 +29,7 @@ public class App3 {
         return suma;
     }
 
-    static int obtenerAprobados(double[] notas){
+    static int obtenerAprobados(){
         int contadorAprobados = 0;
         for(int i=0; i<notas.length;i++){
             if(notas[i]>=13){
@@ -37,4 +38,5 @@ public class App3 {
         }
         return contadorAprobados;
     }
+
 }
