@@ -32,12 +32,36 @@ public class App1 {
          }
         return cantidadVehiculos;
     }
+    static String obtenerTipoVehiculo(String[] tipos){
+        String tipo=null;
+        int autos=0, camiones=0, buses=0; //contadores
+        for(int i=0; i < tipos.length; i++){
+            if(tipos[i].equals("Auto")){
+                autos++;
+            }
+            if(tipos[i].equals("Camion")){
+                camiones++;
+            }
+            if(tipos[i].equals("Bus")){
+                buses++;
+            }
+        }
+        if(autos<camiones && autos<buses){
+            tipo = "Auto";
+        }else  if(camiones<autos && camiones<buses){
+            tipo="Camion";
+        } else if(buses<autos && buses<camiones){
+            tipo="Bus";
+        }
+        return tipo;
+    }
     public static void main(String[] args) {
         String[] placas = {"ABC123", "PQR222", "AMD980", "BBC222","AAA111"};
-        String[] tipos = {"Auto", "Camion","Auto", "Bus", "Bus"};
+        String[] tipos = {"Auto", "Bus","Camion", "Auto", "Bus"}; //a:2, c:1, b:2
         //leer del teclado el dígito o asumir un dígito constante
         int digito = 1; //sc.nextInt()...
         System.out.println("Cantidad de vehiculos:" + obtenerCantidadVehiculos(digito, placas));
+        System.out.println("Circula menos:" + obtenerTipoVehiculo(tipos));
 
 
     }
