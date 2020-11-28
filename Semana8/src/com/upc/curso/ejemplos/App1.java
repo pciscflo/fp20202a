@@ -1,4 +1,7 @@
 package com.upc.curso.ejemplos;
+
+import java.util.Arrays;
+
 /*
 El municipio de Lima pretende implementar un sistema que permita restringir el acceso
 de los vehículos en las principales vías dependiendo de ciertos criterios, para esto va a utilizar
@@ -55,14 +58,27 @@ public class App1 {
         }
         return tipo;
     }
+    static String[] obtenerPlacasStickerVerdeRojo(String[] placas){
+        String[] placasVerdesRojas = new String[placas.length];
+        int p, j=0;
+        for(int i=0; i<placas.length; i++){
+            p = Integer.parseInt(placas[i].substring(5,6));
+            if(p>=5 && p<=8){
+                placasVerdesRojas[j] = placas[i];
+                j++;//posicion de la placa seleccionada
+            }
+        }
+        return placasVerdesRojas;
+    }
     public static void main(String[] args) {
-        String[] placas = {"ABC123", "PQR222", "AMD980", "BBC222","AAA111"};
+        String[] placas = {"ABC123", "PQR222", "AMD988", "BBC222","AAA111"};
         String[] tipos = {"Auto", "Bus","Camion", "Auto", "Bus"}; //a:2, c:1, b:2
         //leer del teclado el dígito o asumir un dígito constante
         int digito = 1; //sc.nextInt()...
         System.out.println("Cantidad de vehiculos:" + obtenerCantidadVehiculos(digito, placas));
         System.out.println("Circula menos:" + obtenerTipoVehiculo(tipos));
-
+        System.out.println("Placas Verdes o Rojas:" +
+                Arrays.toString(obtenerPlacasStickerVerdeRojo(placas)));
 
     }
 
